@@ -1157,13 +1157,17 @@ input, select, textarea {
 			background: linear-gradient(
 				225deg,
 				rgba(8, 86, 92, 0.95) 0%,
+				rgba(12, 123, 131, 0.75) 10%,
 				rgba(255, 190, 152, 0.35) 25%,
 				rgba(156, 175, 136, 0.95) 50%,
 				rgba(142, 130, 121, 0.35) 75%,
+				rgba(10, 98, 105, 0.85) 90%,
 				rgba(8, 86, 92, 0.95) 100%
 			);
 			background-size: 300% 300%;
-			animation: gradientTransition 20s cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite;
+			animation: 
+				gradientTransition 12s cubic-bezier(0.25, 0.05, 0.55, 0.95) infinite,
+				parallaxShift 8s ease-in-out infinite alternate;
 			background-position: center, center;
 			background-repeat: no-repeat, repeat;
 			z-index: 2;
@@ -1788,4 +1792,21 @@ input, select, textarea {
   100% {
     background-position: 0% 50%;
   }
+}
+
+nav ul {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    padding: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+nav ul li a {
+    transition: all 0.3s ease;
+}
+
+nav ul li a:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
 }

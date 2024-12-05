@@ -16,6 +16,10 @@
   
   --gradient-primary: linear-gradient(45deg, var(--peach-fuzz), var(--sage-green));
   --gradient-secondary: linear-gradient(135deg, var(--deep-teal), var(--warm-gray));
+  --gradient-1: linear-gradient(0deg, rgba(8, 86, 92, 0.95), rgba(255, 190, 152, 0.35));
+  --gradient-2: linear-gradient(0deg, rgba(156, 175, 136, 0.95), rgba(142, 130, 121, 0.35));
+  --gradient-3: linear-gradient(0deg, rgba(255, 190, 152, 0.95), rgba(8, 86, 92, 0.35));
+  --gradient-4: linear-gradient(0deg, rgba(142, 130, 121, 0.95), rgba(156, 175, 136, 0.35));
 }
 
 html, body, div, span, applet, object,
@@ -1150,18 +1154,23 @@ input, select, textarea {
 			-webkit-transition-delay: 0.75s;
 			-ms-transition-delay: 0.75s;
 			transition-delay: 0.75s;
-			background-image: linear-gradient(
-				0deg,
-				rgba(8, 86, 92, 0.95),
-				rgba(255, 190, 152, 0.35)
+			background: linear-gradient(
+				225deg,
+				rgba(8, 86, 92, 0.95) 0%,
+				rgba(12, 123, 131, 0.75) 10%,
+				rgba(255, 190, 152, 0.35) 25%,
+				rgba(156, 175, 136, 0.95) 50%,
+				rgba(142, 130, 121, 0.35) 75%,
+					rgba(10, 98, 105, 0.85) 90%,
+				rgba(8, 86, 92, 0.95) 100%
 			);
-			background-size: auto,
- 256px 256px;
-			background-position: center,
- center;
-			background-repeat: no-repeat,
- repeat;
+			background-size: 300% 300%;
+			animation: gradientTransition 20s cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite;
+			background-position: center, center;
+			background-repeat: no-repeat, repeat;
 			z-index: 2;
+			filter: saturate(1.2) contrast(1.1);
+			backdrop-filter: blur(1px);
 		}
 
 		#bg:after {
@@ -1757,4 +1766,16 @@ input, select, textarea {
     .projects-grid {
         grid-template-columns: 1fr;
     }
+}
+
+@keyframes gradientTransition {
+  0%, 20% {
+    background-position: 0% 50%;
+  }
+  50%, 70% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }

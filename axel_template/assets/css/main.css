@@ -7,6 +7,17 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
+:root {
+  --peach-fuzz: #FFBE98;
+  --sage-green: #9CAF88;
+  --deep-teal: #08565C;
+  --warm-gray: #8E8279;
+  --soft-white: #FAF3F0;
+  
+  --gradient-primary: linear-gradient(45deg, var(--peach-fuzz), var(--sage-green));
+  --gradient-secondary: linear-gradient(135deg, var(--deep-teal), var(--warm-gray));
+}
+
 html, body, div, span, applet, object,
 iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
 pre, a, abbr, acronym, address, big, cite,
@@ -140,7 +151,7 @@ input, select, textarea {
 		}
 
 	body, input, select, textarea {
-		color: #ffffff;
+		color: var(--soft-white);
 		font-family: "Source Sans Pro", sans-serif;
 		font-weight: 300;
 		font-size: 1rem;
@@ -1078,8 +1089,8 @@ input, select, textarea {
 		input[type="button"].primary,
 		button.primary,
 		.button.primary {
-			background-color: #ffffff;
-			color: #1b1f22 !important;
+			background-color: var(--peach-fuzz);
+			color: var(--deep-teal);
 			font-weight: 600;
 		}
 
@@ -1139,7 +1150,11 @@ input, select, textarea {
 			-webkit-transition-delay: 0.75s;
 			-ms-transition-delay: 0.75s;
 			transition-delay: 0.75s;
-			background-image: linear-gradient(to top, rgba(19, 21, 25, 0.5), rgba(19, 21, 25, 0.5)), url("../../images/overlay.png");
+			background-image: linear-gradient(
+				0deg,
+				rgba(8, 86, 92, 0.95),
+				rgba(255, 190, 152, 0.35)
+			);
 			background-size: auto,
  256px 256px;
 			background-position: center,
@@ -1546,7 +1561,8 @@ input, select, textarea {
 			position: relative;
 			width: 40rem;
 			max-width: 100%;
-			background-color: rgba(27, 31, 34, 0.85);
+			background-color: rgba(8, 86, 92, 0.85);
+			backdrop-filter: blur(10px);
 			border-radius: 4px;
 			opacity: 0;
 		}
@@ -1667,7 +1683,7 @@ input, select, textarea {
 }
 
 .gradient-text {
-  background: linear-gradient(45deg, #12c2e9, #c471ed, #f64f59);
+  background: var(--gradient-primary);
   background-size: 200% 200%;
   animation: gradientBg 5s ease infinite;
   -webkit-background-clip: text;
@@ -1684,7 +1700,7 @@ input, select, textarea {
 
 .skill-progress {
   height: 100%;
-  background: linear-gradient(90deg, #12c2e9, #c471ed);
+  background: var(--gradient-primary);
   transform-origin: left;
   animation: skillProgress 1s ease-out forwards;
 }
@@ -1703,7 +1719,8 @@ input, select, textarea {
 }
 
 .project-card {
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(255, 190, 152, 0.1);
+    backdrop-filter: blur(8px);
     border-radius: 4px;
     padding: 1.5rem;
     transition: transform 0.2s ease;
@@ -1711,6 +1728,7 @@ input, select, textarea {
 
 .project-card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(255, 190, 152, 0.2);
 }
 
 .project-card h3 {

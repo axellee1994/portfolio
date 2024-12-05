@@ -1157,11 +1157,9 @@ input, select, textarea {
 			background: linear-gradient(
 				225deg,
 				rgba(8, 86, 92, 0.95) 0%,
-				rgba(12, 123, 131, 0.75) 10%,
 				rgba(255, 190, 152, 0.35) 25%,
 				rgba(156, 175, 136, 0.95) 50%,
 				rgba(142, 130, 121, 0.35) 75%,
-					rgba(10, 98, 105, 0.85) 90%,
 				rgba(8, 86, 92, 0.95) 100%
 			);
 			background-size: 300% 300%;
@@ -1171,6 +1169,18 @@ input, select, textarea {
 			z-index: 2;
 			filter: saturate(1.2) contrast(1.1);
 			backdrop-filter: blur(1px);
+		}
+
+		@keyframes gradientTransition {
+			0% {
+				background-position: 0% 50%;
+			}
+			50% {
+				background-position: 100% 50%;
+			}
+			100% {
+				background-position: 0% 50%;
+			}
 		}
 
 		#bg:after {
